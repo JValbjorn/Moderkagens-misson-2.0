@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game-virus</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/in-game.css" />
+    <link rel="stylesheet" href="css/game1.css" />
+    <link rel="stylesheet" href="css/game2.css" />
+    <link rel="stylesheet" href="css/game3.css" />
+    <link rel="stylesheet" href="css/pop-up.css" />
+    <link rel="stylesheet" href="css/congrats-box.css" />
+  </head>
+  <body>
+    <main id="main-content">
+      <div class="blue-cornors">
+        <div class="home-btn">
+          <img
+            src="media/img/icons/back-to-home-white.png"
+            alt="Back-2-Home"
+            class="home"
+          />
+        </div>
+        <div class="timer-cornor">
+          <p class="timer" data-redirect="game3-infections.html">45</p>
+        </div>
+      </div>
+
+      <section class="blodbane-left">
+        <!-- Madikoner tilføjes dynamisk med JS -->
+      </section>
+
+      <figure>
+        <img
+          src="media/img/backgrunds/blod-baner-01.png"
+          alt="blod-baner"
+          class="blod-baner"
+        />
+      </figure>
+
+      <figure>
+        <img
+          src="media/video/ani-baby.gif"
+          alt="baby in womb"
+          class="baby-game"
+        />
+      </figure>
+
+      <div class="pop-up" id="pop-up" data-stage="3">
+        <div class="pop-up-content" id="pop-up-content">
+          <h1>Beskyt Babyen!</h1>
+          <p>
+            Virusser er på vej og kan give infektioner! Beskyt babyen ved at
+            trykke dem væk!
+          </p>
+          <p>-Husk stadig at sørge for ernæring og udskille affaldsstoffer!-</p>
+
+          <figure class="gif-exp-container">
+            <img
+              src="media/video/gif/gif-stage3.gif"
+              alt="explanation stage 3"
+              class="gif-exp"
+            />
+          </figure>
+
+          <div class="close-box">
+            <span class="close" id="close">Det er forstået!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="congrats" id="congrats">
+        <div class="congrats-content" id="congrats-content">
+          <h1>Spillet er gennemført!</h1>
+          <p>
+            Du har nu prøvet kræfter med moderkagens mission! er du klar til at
+            se, hvordan det gik?
+          </p>
+          <figure class="load-container">
+            <!-- <img
+              class="load-img"
+              src="media/img/knapper/progress-template.png"
+              alt="loade cirkel"
+            /> -->
+          </figure>
+          <button id="congrats-btn" onclick="endings()">Okay!</button>
+        </div>
+      </div>
+
+      <section id="waste-container">
+        <!-- Affaldsstof-ikoner tilføjes dynamisk med JS -->
+      </section>
+
+      <section id="virus-container">
+        <!-- virus-ikoner tilføjes dynamisk med JS -->
+      </section>
+
+      <div id="confirm-box" class="confirm-box">
+        <div id="confirm-home" class="confirm-home">
+          <h1>Er du sikker på at du vil forlade spillet?!</h1>
+          <div class="b2home-btn">
+            <button id="exit">Ja</button>
+            <button id="stay">Nej!</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/localStorage.js"></script>
+    <script src="js/pointCounter.js"></script>
+    <script src="js/scores.js"></script>
+    <script src="js/foodMovement.js"></script>
+    <script src="js/wasteMovement.js"></script>
+    <script src="js/popUpInfoWindow.js"></script>
+    <script src="js/congrats.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/virusMovement.js"></script>
+    <script src="js/gameState.js"></script>
+    <script src="js/backToHome.js"></script>
+    <script src="js/introVideo.js"></script>
+  </body>
+</html>

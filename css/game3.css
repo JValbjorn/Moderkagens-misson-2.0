@@ -1,0 +1,25 @@
+#virus-container {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; 
+  z-index: 1000;
+}
+
+.virus-icon {
+    width: 90px;
+    height: auto;
+    pointer-events: auto; /* så de kan klikkes på */
+    z-index: 1000;
+    animation: side 1.5s ease-in-out infinite; /* får virus-ikonerne til at bevæge sig fra side til side*/
+}
+
+
+/* svævende animation fra side til side */
+@keyframes side {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-30px); }
+  100% { transform: translateX(0); }
+}
+

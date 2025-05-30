@@ -1,0 +1,135 @@
+body {
+  background-image: url(../media/img/backgrunds/background-placenta.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+  top: 0;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.spil-btn {
+  font-size: 2.5rem;
+  background-color: #fda5a1;
+  border: 5px solid #ff737d;
+  width: 13rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  right: 3rem;
+  bottom: 7rem;
+}
+
+.home-btn {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+}
+
+.infographic-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.infograph-topics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  column-gap: 100px;
+}
+
+.moderkage {
+  max-width: 70%;
+  margin-top: 30%;
+}
+
+.food {
+  margin-top: 8%;
+}
+
+.waste {
+  margin-top: 4%;
+}
+
+.virus {
+  margin-top: 3%;
+}
+
+.img-food,
+.img-waste,
+.img-virus {
+  pointer-events: auto;
+  animation: upDown 2.5s ease-in-out infinite;
+  z-index: 1100;
+  animation: fadeIn 1.5s ease forwards, upDown 2.5s ease-in-out infinite;
+}
+
+.waste-icon {
+  position: absolute;
+  width: 90px;
+  pointer-events: auto;
+  animation: upDown 2.5s ease-in-out infinite;
+  z-index: 1100;
+  animation: fadeIn 1.5s ease forwards, upDown 2.5s ease-in-out infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(-40px, -250px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-100px, -500px); /* Curve toward center-left */
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(-70px, -750px);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-50px, -850px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(
+      200px,
+      -1200px
+    ); 
+    opacity: 1;
+  }
+}

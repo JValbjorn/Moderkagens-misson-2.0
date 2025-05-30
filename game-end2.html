@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game-end-mid</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/game-endings.css" />
+  </head>
+  <body>
+    <main>
+        <div class="background"></div>
+      <section class="overskrifter">
+        <h1 class="h1">Moderkagens mission er næsten fuldført!</h1>
+        <h2 class="konsekvenser">Din baby har det okay - men der var plads til forbedringer.</h2>
+      </section>
+
+      <article class="progress-container">
+        <section class="circle-progress" data-type="good">
+          <svg viewBox="0 0 36 36">
+            <path
+              class="bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <path
+              class="progress"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <text x="18" y="20.35" class="percentage">0%</text>
+          </svg>
+          <!-- <p>Good</p> -->
+        </section>
+
+        <section class="circle-progress" data-type="waste">
+          <svg viewBox="0 0 36 36">
+            <path
+              class="bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <path
+              class="progress"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <text x="18" y="20.35" class="percentage">0%</text>
+          </svg>
+          <!-- <p>Bad</p> -->
+          <!-- Samme struktur som ovenfor -->
+        </section>
+
+        <section class="circle-progress" data-type="virus">
+          <svg viewBox="0 0 36 36">
+            <path
+              class="bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <path
+              class="progress"
+              d="M18 2.0845 a 15.9155 15.9155 0 1 1 0 31.831 a 15.9155 15.9155 0 1 1 0 -31.831"
+            />
+            <text x="18" y="20.35" class="percentage">0%</text>
+          </svg>
+          <!-- <p>Waste</p> -->
+          <!-- Samme struktur -->
+        </section>
+      </article>
+
+      <article class="baby-scores">
+        <section class="baby-face">
+          <img src="media/img/baby/baby-sad.png" alt="Glad baby" />
+        </section>
+
+        <section class="scores">
+          <aside class="ernaering resultater">
+            <img
+              src="media/img/knapper/progress-template.png"
+              alt="Progrssions-doughnut"
+              class="prog-doughnuts"
+            />
+            <div class="ikon-tekst">
+              <img src="media/img/food-items/blueberry.png" alt="blåbær" />
+              <p>Du fik fat i ernæring</p>
+            </div>
+          </aside>
+
+          <aside class="affaldsstoffer resultater">
+            <img
+              src="media/img/knapper/progress-template.png"
+              alt="Progrssions-doughnut"
+              class="prog-doughnuts"
+            />
+            <div class="ikon-tekst">
+              <img
+                src="media/img/affaldsstoffer/waste-orange.png"
+                alt="pink-affaldsstof"
+              />
+              <p>Du fjernede affaldsstoffer</p>
+            </div>
+          </aside>
+          <aside class="infektion resultater">
+            <img
+              src="media/img/knapper/progress-template.png"
+              alt="Progrssions-doughnut"
+              class="prog-doughnuts"
+            />
+            <div class="ikon-tekst">
+              <img src="media/img/virus/papiloma.png" alt="papiloma" />
+              <p>Du bekæmpede virusser</p>
+            </div>
+          </aside>
+        </section>
+      </article>
+
+      <h3 class="bundtekst">
+        Moderkagen gjorde sit bedste, og det gjorde du også. Der var lidt bump
+        på vejen, men babyen kom i mål
+      </h3>
+
+      <div class="btn-box">
+        <a href="game1-food.html" class="btn">Spil igen?</a>
+        <a href="infographic.html" class="btn">Fakta og funktioner</a>
+      </div>
+
+      <div class="blue-cornors">
+        <div class="home-btn">
+          <a href="index.html">
+            <img
+              src="media/img/icons/back-to-home-white.png"
+              alt="Back-2-Home"
+              class="home"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/localStorage.js"></script>
+    <script src="js/congrats.js"></script>
+    <script src="js/scores.js"></script>
+  </body>
+</html>

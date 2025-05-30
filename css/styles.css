@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    max-height: 1600px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height:1600px;
+    font-family: 'SourceCodeVariable', monospace;
+}
+
+@font-face {
+  font-family: 'SourceCodeVariable'; /* Give your font a name */
+  src: url('../media/fonts/source-codevariable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-btn {
+    width: 17%;
+    height: 10%;
+    background-color: #047381;
+    border: 5px solid #014555;
+    border-radius: 0 0 150% 0;
+    position: absolute;
+    z-index: 1001;
+}
+
+.home {
+   height: 5em; 
+   width: auto;
+   margin: 1rem 6rem 3rem 1rem;
+}
+
+.blue-cornors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-home {
+ background-color: #fff;
+ z-index: 1001;
+   width: 30rem;
+    height: 15rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#exit, #stay {
+    display: flex;
+    border-color: #29abe2;
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: #29abe2; 
+    border-radius: 23px;
+    padding: 0.7rem;
+    min-width: 8rem;
+   column-gap: 3rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.b2home-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.confirm-box {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+   
+}
+
+
+.blod-baner {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: inline-block;
+}
+
+
+
+
+

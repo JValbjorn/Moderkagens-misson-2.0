@@ -1,0 +1,45 @@
+/* Stage 1 spil interaktive del   */
+  .blodbane-left {
+  top: 12%; 
+  left: 8%;
+  width: 24%;
+  height: 78%;
+}
+
+  .food-icon {
+    position: absolute;
+    pointer-events: auto; /* så de kan klikkes på */
+    z-index: 1000;
+    width: 8%;
+    padding: 20px;  /* gør hitboxen større */
+    box-sizing: content-box; /* sikrer at padding/hitboxen ikke formindsker billederne */
+    animation: curveDown 4s cubic-bezier(0.42, 0, 1, 1) forwards;
+  }
+ 
+
+  
+/* Alle disse keyframes sikrer en smooth buet animation af mad-ikonerne */
+
+@keyframes curveDown {
+  0%    { transform: translate(0px, 45px); }
+  5%    { transform: translate(12px, 70px); }
+  10%   { transform: translate(26px, 105px); }
+  15%   { transform: translate(42px, 150px); }
+  20%   { transform: translate(60px, 200px); }
+  25%   { transform: translate(80px, 250px); }
+  30%   { transform: translate(100px, 300px); }
+  35%   { transform: translate(115px, 350px); }
+  40%   { transform: translate(128px, 400px); }
+  45%   { transform: translate(138px, 450px); }
+  50%   { transform: translate(145px, 500px); }
+  55%   { transform: translate(147px, 550px); }
+  60%   { transform: translate(145px, 600px); }
+  65%   { transform: translate(140px, 650px); }
+  70%   { transform: translate(128px, 700px); }
+  75%   { transform: translate(110px, 750px); }
+  80%   { transform: translate(95px, 800px); }   
+  85%   { transform: translate(80px, 850px); }   
+  90%   { transform: translate(60px, 900px); }   
+  95%   { transform: translate(35px, 975px); }   
+  100%  { transform: translate(-40px, 1050px); opacity: 0.7; }
+}

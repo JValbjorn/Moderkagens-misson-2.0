@@ -1,0 +1,78 @@
+body {
+  background-image: url(../media/img/backgrunds/baggrund-spil-01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.timer-cornor {
+  width: 17%;
+  height: 10%;
+  background-color: #047381;
+  border: 5px solid #014555;
+  border-radius: 0 0 0 150%;
+
+  position: absolute;
+  z-index: 1110;
+  top: 0;
+  right: 0;
+}
+
+.timer {
+  position: relative;
+  left: 1rem;
+  height: 2.36em;
+  width: auto;
+  margin: 2rem 3rem;
+
+  color: white;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.baby-game {
+  margin-left: 5%;
+  margin-right: auto;
+  margin-top: 122%;
+  height: 38rem;
+  width: auto;
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1999;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* sørgrer for at videoen fylder hele siden */
+}
+
+.main-content {
+  display: none; /*det som obrinligt var skjult, vises efter videoen */
+}
+
+.gif-exp {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: #000 0px 0px 5px;
+}
+
+.gif-exp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+  }
