@@ -103,7 +103,23 @@ a {
     display: inline-block;
 }
 
+.flag {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
+.flag-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
 
