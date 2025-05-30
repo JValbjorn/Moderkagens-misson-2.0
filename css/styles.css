@@ -104,8 +104,8 @@ a {
 }
 
 .flag {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 100%;
     margin: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
