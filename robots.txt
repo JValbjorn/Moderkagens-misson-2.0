@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: http://moderkagens-mission.jvalbjorn.dk//sitemap.xml 
+Sitemap: http://moderkagens-mission-2.0.jvalbjorn.dk//sitemap.xml 

@@ -13,7 +13,7 @@ const madIkoner = [
   { src: "media/img/food-items/strawberry.png", type: "good" },
   { src: "media/img/food-items/water.png", type: "good" },
   { src: "media/img/food-items/blue-donut.png", type: "bad" },
-  { src: "media/img/food-items/wine.png", type: "bad" },
+      // Fjernet alkohol
   { src: "media/img/food-items/fries.png", type: "bad" },
   { src: "media/img/food-items/pizza.png", type: "bad" },
   { src: "media/img/food-items/pink-donut.png", type: "bad" },
