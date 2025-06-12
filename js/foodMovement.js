@@ -26,7 +26,8 @@ const madIkoner = [
 function generateFoodIcon() {
   if (gamePaused) {
     return;
-  }
+  } //I popUpInfoWindow.js erklæres gamepaused for "false", når man klikker "det erforstået/okay"
+  // og følgeende kode nedenunder herfra eksekveres
 
   const ikonData = madIkoner[Math.floor(Math.random() * madIkoner.length)];
 
@@ -37,15 +38,15 @@ function generateFoodIcon() {
     updateScoreDisplay(); 
   }
 
-  const img = document.createElement("img");
-  img.src = ikonData.src;
-  img.classList.add("food-icon");
-  img.dataset.type = ikonData.type;
+  const img = document.createElement("img"); //vi laver et midlertidigt html-element
+  img.src = ikonData.src; //vi sætter det lig med billederne fra object-array'et ovenover
+  img.classList.add("food-icon"); //giver dem class'en .food-icon
+  img.dataset.type = ikonData.type; //tilføjer "type"-værdien ("good" eller "bad")
 
   
   img.addEventListener("animationend", (e) => {
     if (e.animationName === "curveDown") {
-      img.remove();
+      img.remove(); //sletter det midlertidige html-element igen, når curvedown animationen når 100%
     }
   });
 
@@ -63,10 +64,12 @@ function generateFoodIcon() {
   });
 
   document.querySelector(".blodbane-left").appendChild(img);
+  //sørger for at at de nye genererede html-elementer kommer efter hinanden
+  //den første der bliver lavet, er den første der bliver vist
 }
 
 let spawnInterval;
-
+//sætter intervallet for hvor ofte, der skal genereres et billeder til at være 1sek 
 function startFoodMovement() {
-  spawnInterval = setInterval(generateFoodIcon, 1000);
+  spawnInterval = setInterval(generateFoodIcon, 1000); 
 }

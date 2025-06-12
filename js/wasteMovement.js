@@ -11,6 +11,7 @@ const wasteIcons = [
 ];
 
 /* Indstiller de forskellige positioner, hvor ikonerne kan spawne */
+//x-aksen henad mod venstre og y-aksen er fra top til bund
 const wasteSpawnPositions = [
   { x: 160, y: 1200 },
   { x: 300, y: 1140 },
@@ -30,15 +31,15 @@ function spawnWasteIcon() {
   }
 
   const availablePositions = wasteSpawnPositions.filter(
-    (pos) => !usedPositions.includes(pos)
+    (pos) => !usedPositions.includes(pos) //laver et nyt array, hvor kriteriet er pos ikke må være lig med usedPosition(pos)
   );
-  if (availablePositions.length === 0) return;
+  if (availablePositions.length === 0) return; //hvis der ikke er flere ledige pladser stopper funktionen
 
   const pos =
-    availablePositions[Math.floor(Math.random() * availablePositions.length)];
-  usedPositions.push(pos);
+    availablePositions[Math.floor(Math.random() * availablePositions.length)]; 
+  usedPositions.push(pos); //tilføjer nyt element i usedPosition-array'et
 
-  const randomWaste = wasteIcons[Math.floor(Math.random() * wasteIcons.length)];
+  const randomWaste = wasteIcons[Math.floor(Math.random() * wasteIcons.length)]; //
 
   //Triers local addpoint og local storage bavl
   if (generatedCount[randomWaste.type] !== undefined) {
@@ -67,10 +68,10 @@ function spawnWasteIcon() {
     wasteLom();
 
     icon.remove();
-    usedPositions = usedPositions.filter((p) => p !== pos);
+    usedPositions = usedPositions.filter((p) => p !== pos); //fjerner position fra array'et usedPosition, dermed gør den ledig
 
     const newPos = {
-      x: window.innerWidth - 300, // 150px fra højre kant
+      x: window.innerWidth - 300, // den nye position over i højre blodbane
       y: window.innerHeight - 800,
     };
 
@@ -88,7 +89,8 @@ function spawnWasteIcon() {
 
     setTimeout(() => {
       exitIcon.remove();
-    }, 2000);
+    }, 2000); //efter to sekunder fjernes elementet fra exitIcon
+    //så det vil give mening at animationen ud af skærmen er færdig før 2 sekunder
   });
 
   wasteContainer.appendChild(icon);
@@ -97,5 +99,5 @@ function spawnWasteIcon() {
 let wasteInterval;
 
 function startWasteSpawn() {
-  wasteInterval = setInterval(spawnWasteIcon, 3000);
+  wasteInterval = setInterval(spawnWasteIcon, 3000); //spawner affaldsstofferne hver tredje sekund
 }

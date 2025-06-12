@@ -17,7 +17,7 @@ span.onclick = () => {
 //denne funktion starter spillet, timer, lukker pop-up vinduet og tæller stage
 function startGame() {
     popUp.style.display = "none";
-    stage = +popUp.dataset.stage
+    stage = +popUp.dataset.stage //stage bliver plusset med datasettets.stage
     gamePaused = false;
     startCountdown();
     startFoodMovement();

@@ -16,10 +16,11 @@ function updateCountdown() {
   // const minutter = Math.floor(tid / 60);
   let sekunder = tid % 60;
 
-  sekunder = sekunder < 10 ? "0" + sekunder : sekunder;
+  sekunder = sekunder < 10 ? "0" + sekunder : sekunder; //"?" og ":" er en mere effektiv måde at skrive if-else statement
+  //"hvis sekunder er mindre end 10, så tilføj et "0" foran (09...08...07 osv.), ellers lad sekunder være som de er
 
   countdownEl.textContent = `${sekunder}`; // tidligere${minutter}:${sekunder}
-  tid--;
+  tid--; //trækker ét (sekund) fra timeren
 
   if (tid < 0) {
     clearInterval(countdownInterval);
@@ -36,7 +37,7 @@ function updateCountdown() {
     }
   }
 }
-
+//Alt nedenunder er rester af fra et tidligere projekt 
 function showMessage(msg) {
   alert(msg);
 }

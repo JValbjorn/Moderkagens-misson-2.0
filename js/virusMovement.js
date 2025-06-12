@@ -11,7 +11,7 @@ const virusIkoner = [
   { src: "media/img/virus/estreptococo.png", type: "virus" },
   { src: "media/img/virus/papiloma.png", type: "virus" },
 ];
-// Definerer spawn positioner 
+// Definerer hvor viraerne skal ende/ramme babyen 
 const virusSpawnPositions = [
   { x: 330, y: 1170 },
   { x: 500, y: 1150 },
@@ -52,7 +52,7 @@ function spawnVirusIcon() {
     return;
   }
   
-  // vælger et random virusikon og spawner denne 
+  // vælger et random virusikon fra arra'et og spawner denne 
   const ikonData = virusIkoner[Math.floor(Math.random() * virusIkoner.length)];
 
   //Triers local addpoint og local storage bavl
@@ -61,7 +61,7 @@ function spawnVirusIcon() {
     saveGeneratedCount();
     updateScoreDisplay(); 
   }
-
+  //
   const spawn =
     virusSpawnPositions[Math.floor(Math.random() * virusSpawnPositions.length)];
 
@@ -70,9 +70,9 @@ function spawnVirusIcon() {
   img.src = ikonData.src;
   img.classList.add("virus-icon");
   img.style.position = "absolute";
-  img.style.left = spawn.x + "px";
+  img.style.left = spawn.x + "px"; //genbruger x-værdien
   img.style.top = "-100px"; // Starter oppe og uden for skærmen
-  img.dataset.hit = "false"; 
+  img.dataset.hit = "false"; //Boolean som vi skal bruge i
   img.dataset.type = ikonData.type; //local storage, identificering af type
 
   
@@ -89,7 +89,8 @@ function spawnVirusIcon() {
   
   virusContainer.appendChild(img);
 
-  
+  //Animere viraerne fra 100px udenfor skærmen og ned til de tidligere bestemte y-kordinater.
+  //Animationen sker over 4 sekunder
   const animation = img.animate([{ top: "-100px" }, { top: spawn.y + "px" }], {
     duration: 4000,
     fill: "forwards",
