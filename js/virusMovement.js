@@ -33,13 +33,13 @@ function triggerDamageFlash() {
 
   document.body.appendChild(flashElement);
 
-  
+  //Animation af damage flash
   flashElement.animate([{ opacity: 1 }, { opacity: 0 }], {
     duration: 300,
     easing: "ease-out",
   });
 
-  
+  //damage flash bliver fjernet igen
   setTimeout(() => {
     flashElement.remove();
   }, 300);
@@ -52,20 +52,21 @@ function spawnVirusIcon() {
     return;
   }
   
-  // vælger et random virusikon fra arra'et og spawner denne 
+  // vælger et random virusikon fra object-arra'et og spawner denne 
   const ikonData = virusIkoner[Math.floor(Math.random() * virusIkoner.length)];
 
   //Triers local addpoint og local storage bavl
   if (generatedCount[ikonData.type] !== undefined) {
     generatedCount[ikonData.type]++;
     saveGeneratedCount();
-    updateScoreDisplay(); 
+    // updateScoreDisplay(); 
   }
-  //
+
+  //vælger en radom position fra det andet object-array
   const spawn =
     virusSpawnPositions[Math.floor(Math.random() * virusSpawnPositions.length)];
 
-  
+  //laver midlertidigt html-element
   const img = document.createElement("img");
   img.src = ikonData.src;
   img.classList.add("virus-icon");
@@ -80,14 +81,14 @@ function spawnVirusIcon() {
     hitSound.currentTime = 0;
     hitSound.play();
     
-    img.remove();
+    img.remove(); //fjerner html-elementet igen
     addPoint();
     virusLom();
     
   });
 
   
-  virusContainer.appendChild(img);
+  virusContainer.appendChild(img); //rækkefølge, sidste genereret er sidst på listen
 
   //Animere viraerne fra 100px udenfor skærmen og ned til de tidligere bestemte y-kordinater.
   //Animationen sker over 4 sekunder
@@ -98,7 +99,7 @@ function spawnVirusIcon() {
 
   
   animation.onfinish = () => {
-    
+    //hvis virus rammer baby
     if (img.parentNode === virusContainer && img.dataset.hit === "false") {
       img.dataset.hit = "true"; // Mark as hit
       damageSound.currentTime = 0;
@@ -124,7 +125,7 @@ function spawnVirusIcon() {
 
 
 let virusInterval; 
-
+//vira spawner hvert 2. sek
 function startVirusSpawn() {
   virusInterval = setInterval(spawnVirusIcon, 2000);
 }

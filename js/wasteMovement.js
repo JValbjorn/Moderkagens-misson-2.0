@@ -31,7 +31,7 @@ function spawnWasteIcon() {
   }
 
   const availablePositions = wasteSpawnPositions.filter(
-    (pos) => !usedPositions.includes(pos) //laver et nyt array, hvor kriteriet er pos ikke må være lig med usedPosition(pos)
+    (pos) => !usedPositions.includes(pos) //laver et nyt array, hvor kriteriet er at 'pos' ikke må være lig med usedPosition(pos)
   );
   if (availablePositions.length === 0) return; //hvis der ikke er flere ledige pladser stopper funktionen
 
@@ -39,20 +39,23 @@ function spawnWasteIcon() {
     availablePositions[Math.floor(Math.random() * availablePositions.length)]; 
   usedPositions.push(pos); //tilføjer nyt element i usedPosition-array'et
 
+
+//tager antallet af objecter i object-array'et og randomiser
   const randomWaste = wasteIcons[Math.floor(Math.random() * wasteIcons.length)]; //
 
   //Triers local addpoint og local storage bavl
   if (generatedCount[randomWaste.type] !== undefined) {
     generatedCount[randomWaste.type]++;
     saveGeneratedCount();
-    updateScoreDisplay(); 
+    // updateScoreDisplay(); 
   }
 
-  const icon = document.createElement("img");
-  icon.src = randomWaste.src;
-  icon.classList.add("waste-icon");
-  icon.dataset.type = randomWaste.type;
+  const icon = document.createElement("img"); //vi laver et midlertidigt html-element
+  icon.src = randomWaste.src; //vi sætter det lig med billederne fra object-array'et ovenover
+  icon.classList.add("waste-icon"); //giver dem class'en .waste-icon
+  icon.dataset.type = randomWaste.type; //tilføjer "type"-værdien ("waste")
 
+  //Position for de(t) ny(e) generet html-element
   icon.style.position = "absolute";
   icon.style.left = `${pos.x}px`;
   icon.style.top = `${pos.y}px`;
@@ -67,7 +70,7 @@ function spawnWasteIcon() {
 
     wasteLom();
 
-    icon.remove();
+    icon.remove(); //det midlertidige html-elementer bliver fjernet
     usedPositions = usedPositions.filter((p) => p !== pos); //fjerner position fra array'et usedPosition, dermed gør den ledig
 
     const newPos = {
@@ -75,17 +78,19 @@ function spawnWasteIcon() {
       y: window.innerHeight - 800,
     };
 
+    //Laver et nyt midlertidigt html-element
     const exitIcon = document.createElement("img");
     exitIcon.src = randomWaste.src;
     exitIcon.classList.add("waste-icon");
 
+    //Giver en anden position og en animation
     exitIcon.style.position = "absolute";
     exitIcon.style.left = `${newPos.x}px`;
     exitIcon.style.top = `${newPos.y}px`;
     exitIcon.style.pointerEvents = "none";
     exitIcon.style.animation = "slideOut 2s ease-out forwards";
 
-    wasteContainer.appendChild(exitIcon);
+    wasteContainer.appendChild(exitIcon); //rækkefølge(first come, first served)
 
     setTimeout(() => {
       exitIcon.remove();
@@ -93,7 +98,7 @@ function spawnWasteIcon() {
     //så det vil give mening at animationen ud af skærmen er færdig før 2 sekunder
   });
 
-  wasteContainer.appendChild(icon);
+  wasteContainer.appendChild(icon); //rækkefølge(first come, first served)
 }
 
 let wasteInterval;

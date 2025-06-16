@@ -18,7 +18,7 @@ function loadPointsFromLocalStorage() {
     const storedPoints = localStorage.getItem('pointSystem');
     if (storedPoints) {
         scoreArray = JSON.parse(storedPoints); // Konverterer string til array
-        updateUIFromCart(); //kalde funktionen updateUIFromCart()
+        // updateUIFromCart(); //kalde funktionen updateUIFromCart()
     }
 }
 
@@ -89,12 +89,12 @@ function resetPointSystem() {
             generatedCount[type] = 0; //nulstiller array'et generatedCount
         });
         saveGeneratedCount();
-        updateScoreDisplay();
+        // updateScoreDisplay();
         
     }); 
     console.log("PointSystem reset");
     savePointsToLocalStorage();
-    updateUIFromCart();
+    // updateUIFromCart();
 }
 
 

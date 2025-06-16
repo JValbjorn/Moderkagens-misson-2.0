@@ -29,13 +29,15 @@ function generateFoodIcon() {
   } //I popUpInfoWindow.js erklæres gamepaused for "false", når man klikker "det erforstået/okay"
   // og følgeende kode nedenunder herfra eksekveres
 
-  const ikonData = madIkoner[Math.floor(Math.random() * madIkoner.length)];
+
+  //tager antallet af objecter i object-array'et og randomiser
+  const ikonData = madIkoner[Math.floor(Math.random() * madIkoner.length)]; 
 
   // Her tæller vi hvor mange gange hver type er blevet vist
   if (generatedCount[ikonData.type] !== undefined) {
     generatedCount[ikonData.type]++;
     saveGeneratedCount();
-    updateScoreDisplay(); 
+    // updateScoreDisplay(); 
   }
 
   const img = document.createElement("img"); //vi laver et midlertidigt html-element
